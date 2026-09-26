@@ -7,7 +7,7 @@ import work4 from "@/assets/work-4.jpg";
 import studioProcess from "@/assets/studio-process.jpg";
 import { Hero } from "@/components/Hero";
 import { Testimonials } from "@/components/Testimonials";
-import { SmoothScroll } from "@/components/SmoothScroll";
+// import { SmoothScroll } from "@/components/SmoothScroll";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -138,7 +138,7 @@ function Home() {
       <div className="fixed inset-0 z-[200] grid place-items-center bg-background px-6 text-center font-mono text-sm tracking-[0.3em] text-foreground uppercase">
         Vivrit Architects — Coming soon
       </div>
-      <SmoothScroll />
+      {/* <SmoothScroll /> */}
       <Hero />
 
       {/* MARQUEE */}
