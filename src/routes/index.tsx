@@ -135,6 +135,9 @@ function Home() {
 
   return (
     <div ref={page} className="overflow-x-hidden">
+      <div className="fixed inset-0 z-[200] grid place-items-center bg-background px-6 text-center font-mono text-sm tracking-[0.3em] text-foreground uppercase">
+        Vivrit Architects — Coming soon
+      </div>
       <SmoothScroll />
       <Hero />
 
