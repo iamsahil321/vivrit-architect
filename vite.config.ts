@@ -1,0 +1,26 @@
+import { fileURLToPath, URL } from "node:url";
+import tailwindcss from "@tailwindcss/vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import viteReact from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  plugins: [
+    tanstackStart({
+      server: { entry: "server" },
+    }),
+    viteReact(),
+    tailwindcss(),
+  ],
+  resolve: {
+    tsconfigPaths: true,
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+    dedupe: ["react", "react-dom", "@tanstack/react-start", "@tanstack/react-router"],
+  },
+  server: {
+    host: "::",
+    port: 8080,
+  },
+});
