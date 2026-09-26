@@ -129,15 +129,26 @@ const process = [
   },
 ];
 
+const SHOW_FULL_WEBSITE = false;
+
 function Home() {
+  if (SHOW_FULL_WEBSITE) {
+    return <FullWebsite />;
+  }
+
+  return (
+    <main className="grid min-h-screen place-items-center bg-background px-6 text-center font-mono text-sm tracking-[0.3em] text-foreground uppercase">
+      Vivrit Architects — Coming soon
+    </main>
+  );
+}
+
+function FullWebsite() {
   const page = useReveal<HTMLDivElement>();
   useScrollY();
 
   return (
     <div ref={page} className="overflow-x-hidden">
-      <div className="fixed inset-0 z-[200] grid place-items-center bg-background px-6 text-center font-mono text-sm tracking-[0.3em] text-foreground uppercase">
-        Vivrit Architects — Coming soon
-      </div>
       {/* <SmoothScroll /> */}
       <Hero />
 
